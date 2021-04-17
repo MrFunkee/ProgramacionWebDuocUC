@@ -1,5 +1,8 @@
 /* Archivos de estilos personalizados */
-.body {
-    background-color: darkslategray;
+.navbar nav {
+    background-color:brown;
+}
 
+.nav {
+    background-color: brown;
 }
