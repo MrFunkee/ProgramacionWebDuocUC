@@ -18,8 +18,9 @@
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
 <body>
+    <!--cambiar colores, nombres botones, etc-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <div class="container-fluid bg-orange">
+        <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -34,12 +35,71 @@
           </div>
         </div>
       </nav>
+      <div class="container">
+          <p>hola esto es un parrafo</p>
+      </div>
 
+
+          <!--Footer Section -->
+    <footer class="footer bg-dark mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 text-center mt-4">
+                    <img src="assets/img/rocket_512x512.png" alt="LOGO" width="80px" height="80px">
+                </div>
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">PGY3121-001D</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-6 mt-4">
+                    <div class="card bg-dark text-white border-secondary">
+                        <div class="card-header">
+                            <h4 class="card-title">¡Suscríbete a nuestro newsletter!</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control" type="email" name="email" id="email" placeholder="Ej. tucorreo@correo.com">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="submit">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="card-link" href="">
+                                <span style="font-size: 2em;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </span>
+                            </a>
+                            <a class="card-link" href="">
+                                <span style="font-size: 2em;">
+                                    <i class="fab fa-instagram"></i>
+                                </span>
+                            </a>
+                            <a class="card-link" href="">
+                                <span style="font-size: 2em;">
+                                    <i class="fab fa-twitter"></i>
+                                </span>
+                            </a>
+                            <a class="card-link" href="http://www.twitch.com">
+                                <span style="font-size: 2em;">
+                                    <i class="fab fa-twitch"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </footer>
         <!-- Preacargar JS Boostrap al final del documento -->
     <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
     <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    
 </body>
 </html>
