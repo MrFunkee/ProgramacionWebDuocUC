@@ -1,56 +1,88 @@
-<!DOCTYPE html> 
-</html lang="es-cl">
-<div>
-    <body>
-<title>Registro</title>
-<main class=" container mt-4 mb-4">
-    
-    <div class="rown">
-        <div class="cold-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Registrate</h3>
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>título temporal</title>
+        <!--precargar bootstrap local-->
+    <!--Usar el css bootstrap.css, el min es más liviano pero es lo mismo-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!--STYLE PERSONAL-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--al precargar js, se sugiere hacerlo al final del BODY-->
+        <!--orden de carga es JS, Popper, Bostrap.js-->
+</head>
+<body>
+    <!--cambiar colores, nombres botones, etc-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" >
+        <div class="container-fluid">
+          <style>
+              
+          </style>  
+          <a class="navbar-brand" href="#">A la punta del cerro </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
+              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="#">Productos</a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+       <!--Footer Section -->
+       <footer class="footer bg-danger mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Contacto</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
                 </div>
-                <div class="card-body">
-                    <!-- datos -->
-                    <form action="#" method="GET" enctype="text/plain">
-                    <div class="form-group">
-                       <label class="font-weight-bold" for="Nombre">Nombre</label> 
-                       <input class="form-control" type="text" id="Nombre" placeholder="Aquiles" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold" for="Apellido">Apellido:</label> 
-                        <input class="form-control" type="text" id="Apellido" placeholder="Baeza" required>
-                     </div>
-                     <div class="form-group row">
-                        <label for="Email" class="col sm-4 col-form-label font-weight-bold">Email:</label> 
-                        <div class="col-sm-8">
-                        <input class="form-control" type="Email" id="Email" name="Email" placeholder="aquiles.baeza@gmail.com" required>
-                     </div>
-                     <div class="form-group row">
-                        <label for="Password" class="col sm-4 col-form-label font-weight-bold">Contraseña:</label> 
-                        <div class="col-sm-8">
-                        <input class="form-control" type="Password" id="Password" name="Password" required>
-                     </div>
-                     <div class="form-group row">
-                        <label for="RPassword" class="col sm-4 col-form-label font-weight-bold">Repita Contraseña:</label> 
-                        <div class="col-sm-8">
-                        <input class="form-control" type="Password" id="Password" name="Password" required>
-                     </div>
-                    </form>
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Cuenta</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Articulos</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-3 text-center mt-4">
+                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
                 </div>
             </div>
+        </div>
+    </footer>
 
-        </div>
-        <div class="cold-md-6">
-            <img class="d-none d-md-block" src="assets/Logo.png" alt="LOGO" width="1000px" height="1000px">
-        </div>
-    </div>
-</main>
-      <!-- Preacargar JS Boostrap al final del documento -->
-  <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-  <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
+    
+        <!-- Preacargar JS Boostrap al final del documento -->
+    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
+    <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
-</html>
+     
+</html
