@@ -3,3 +3,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
 }
+
+.card-img-overlay{
+    color: indianred;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.body{
+    background-color: gray;
+}
