@@ -10,6 +10,10 @@
 }
 
 .espaciado{
-    color: #dc3545;
-    background-color: #dc3545 ;
+    color: #c7756b;
+    background-color: #c7756b ;
+}
+
+.bg-danger {
+    background-color: #c7756b !important;
 }
