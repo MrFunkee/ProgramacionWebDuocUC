@@ -9,11 +9,13 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.espaciado{
-    color: #c7756b;
-    background-color: #c7756b ;
-}
 
-.bg-danger {
-    background-color: #c7756b !important;
+
+
+.bg-cafe {
+    background-color: #bc3322 !important;
+    color: #bc3322;
+}
+.bg-naranjocafe{
+    background-color: #bc5c22;
 }
