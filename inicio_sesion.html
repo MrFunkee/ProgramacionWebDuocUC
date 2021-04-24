@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO SESION</title>
+        <!--precargar bootstrap local-->
+    <!--Usar el css bootstrap.css, el min es más liviano pero es lo mismo-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!--STYLE PERSONAL-->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--al precargar js, se sugiere hacerlo al final del BODY-->
+        <!--orden de carga es JS, Popper, Bostrap.js-->
+</head>
+<body>
+    <!--cambiar colores, nombres botones, etc-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger" >
+        <div class="container-fluid">      <div class="container-fluid">
+                <img src="assets/Logo.png" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative;"> 
+          <a class="navbar-brand" href="#">A la punta del cerro </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+              <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
+              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="#">Productos</a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--Inicio de sesion-->
+      <main class=" container mt-4 mb-4">
+       <div class="row">
+            <div class="cold-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Iniciar sesión</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="#" method="GET" enctype="text/plain">
+                        <div class="form-group">
+                            <label class="fornt-weight-bold" for="Ingrese email">Ingrese Email</label>
+                            <input class="form-control" type="text" id="Ingrese email" placeholder="correo@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="fornt-weight-bold" for="Ingrese contraseña">Ingrese contraseña</label>
+                            <input class="form-control" type="password" id="password" required>
+                        </div>
+                        <a href="recuperar" class="texto-recuperar-clave">Olvidé mi contraseña</a> 
+                        <div>
+                        <button type="button" class="btn btn-success">Iniciar!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </main>      
+      <!--Fin Inicio sesion-->           
+       <!--Footer Section -->
+       <footer class="footer bg-danger mt-4 py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Contacto</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Cuenta</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-3 mt-4">
+                    <h6 class="display-6">Articulos</h6>                    
+                    <nav class="nav flex-column">                        
+                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="tables.html">Tables</a>
+                        <a class="nav-link disabled" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
+                    </nav>
+                </div>
+                <div class="col-sm-12 col-md-3 text-center mt-4">
+                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+        <!-- Preacargar JS Boostrap al final del documento -->
+    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
+    <script src="assets/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+     
+</html>
