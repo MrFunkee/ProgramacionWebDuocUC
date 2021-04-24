@@ -1,25 +1,44 @@
 /* Archivos de estilos personalizados */
+
+
 .btn{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;
 }
 
 .card-img-overlay{
-    color: #fefae0;
-    
+    color: #fefae0;    
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-
-
+/*
+A pesar de que dice café, es de color rojo.
+Esta clase se usa en el navbar
+*/
 .bg-cafe {
     background-color: #bc3322 !important;
     color: #bc3322;
 }
+
 .bg-naranjocafe{
     background-color: #bc5c22;
 }
+
+/*
+Le da una imagen al fondo de las páginas.
+Posible futuro problema: si la página es muy larga, 
+se va a repetir la imagen y se verá feo
+*/
 body{
     background-image: url("../assets/ImagenTrekking_3456x2160.jpg");
+}
+
+/*clase para el color del footer*/
+.bg-rojo-oscuro{
+    background-color: rgb(107, 9, 9);
+}
+
+/*clase para los títulos de las tarjetas en el footer*/
+.header-del-footer{
+    color:white;
 }
