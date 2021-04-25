@@ -21,27 +21,37 @@
 </head>
 <body style="background-image: none;">
     <!--cambiar colores, nombres botones, etc-->
-    <nav class="navbar navbar-expand-lg navbar-cafe bg-cafe" >
-        <div class="container-fluid">
-            <img src="assets/Logo.png" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
-          <a class="navbar-brand" href="#">A la punta <br>del cerro</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-              <a class="nav-link" href="contacto.html">Contacto</a>
-              <a class="nav-link" href="producto.html">Productos</a>
-              <a class="nav-link" href="acerca_de.html">Quienes somos</a>
-              <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
-              <p class="espaciado bg-cafe" > -----------------------------------------------------------------------------------------  </p>
-              <a class="nav-link" href="inicio_sesion.html">CONEXION</a>
-              <a class="nav-link" href="registro.html">REGISTRATE</a>
+    <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
+        <div class="container">
+            <a href="index.html" class="navbar-brand"><img src="assets/Logo.png" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
+            A la punta del cerro</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>             
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="producto.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="acerca_de.html">Quienes somos</a>
+                    </li>
+                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
+                </ul>
+                <div class="my-2 my-lg-0">
+                    <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
+                    <a class="nav-link" href="registro.html">Crea una Cuenta</a>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </nav>
       <!--Container para imagen superior y seccion "sobre la punta del cerro"-->
     <div class="container-fluid">
         <!--el style lo podemos poner después en el style.css con alguna clase nueva-->

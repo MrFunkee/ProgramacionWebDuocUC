@@ -15,7 +15,7 @@
 A pesar de que dice café, es de color rojo.
 Esta clase se usa en el navbar
 */
-.bg-cafe {
+.bg-navbar {
     background-color: #bc3322 !important;
     color: #bc3322;
 }
@@ -41,4 +41,10 @@ body{
 /*clase para los títulos de las tarjetas en el footer*/
 .header-del-footer{
     color:white;
+}
+
+/*El ícono bootstrap no funcionaba así que 
+descargué un ícono para el toggle del navbar*/
+.navbar-toggler-icon {
+    background-image: url(../assets/iconos/navbar_toggle_icon.png);
 }
