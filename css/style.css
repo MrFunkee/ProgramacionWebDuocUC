@@ -24,7 +24,11 @@ Esta clase se usa en el navbar
     background-color:#bc3322;
     color:#bc3322 ;
 }
-
+.oferta{
+    color: red;
+    background-color: red;
+    lighting-color: red;
+}
 /*
 Le da una imagen al fondo de las páginas.
 Posible futuro problema: si la página es muy larga, 
