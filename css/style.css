@@ -54,3 +54,11 @@ descargué un ícono para el toggle del navbar*/
 .retrato{
     border-radius: 95%;
 }
+
+.form-group small {
+    visibility: hidden;
+}
+
+.error small{
+    visibility: visible;
+}
