@@ -16,10 +16,11 @@
 
     <!--STYLE PERSONAL-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/estilorelojs.css" type="text/css">
     <!--al precargar js, se sugiere hacerlo al final del BODY-->
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
-<body>
+<body onload="startTime()">
   <!--cambiar colores, nombres botones, etc-->
   <!-- NAVEGADOR-->
   <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
@@ -168,11 +169,12 @@
         </div>
       </div>
     </div>
-    </div>
+    
     <!-- FIN ARTICULO 2-->
+ 
   <!-- FIN CARD INFORMACION-->
      <!--Footer Section -->
-     <footer class="footer bg-rojo-oscuro mt-4 py-3">
+     <footer class="footer bg-rojo-oscuro  py-3">
       <div class="container">
           <div class="row">
               <div class="col-sm-12 col-md-3 mt-4">
@@ -201,9 +203,14 @@
               </div>
               <div class="col-sm-12 col-md-3 text-center mt-4">
                   <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
+                  <div id="reloj" class="reloj">
+                  </div>
+                  <div id="fecha"></div>
               </div>
           </div>
+           
       </div>
+      
   </footer>
 
   
@@ -212,5 +219,6 @@
   <script src="js/jquery-3.5.1.slim.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/reloj.js"></script>
 </body>
 </html>

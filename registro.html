@@ -16,6 +16,7 @@
 
     <!--STYLE PERSONAL-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/estilorelojs.css" type="text/css">
     <!--al precargar js, se sugiere hacerlo al final del BODY-->
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
@@ -74,16 +75,17 @@
                                 <small>Mensaje de Error</small>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row  mb-3" >
                             <label for="email">Email:</label>
                             <div class="col sm-4">
                                 <input class= "form-control" type="email" id="email" name="email" placeholder="correo@correo.com"> 
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row mt-3">
                             <label for="rut">Rut: </label>
                             <div class="col sm-4">
                                 <input class= "form-control" type="rut" id="rut" name="rut" placeholder="123456789-9"> 
+                                <h4 id="error"></h4>
                             </div>
                         </div>
                         <div class="form-group">
@@ -152,6 +154,8 @@
                 </div>
                 <div class="col-sm-12 col-md-3 text-center mt-4">
                     <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
+                    <div id="reloj" class="reloj">
+                    </div>
                 </div>
             </div>
         </div>
@@ -164,6 +168,9 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/js_registro.js"></script>
+    <script src="js/reloj.js"></script>
+   
+    
 </body>
      
 </html>
