@@ -60,6 +60,12 @@ descargué un ícono para el toggle del navbar*/
 }
 
 .error small{
+    color: red;
     visibility: visible;
 }
 
+/*usado para cambiar el tag small para que muestre que está correcto en registro.html*/
+.correcto small {
+    color: green;
+    visibility: visible;
+}
