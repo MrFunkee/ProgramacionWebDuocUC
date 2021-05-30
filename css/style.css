@@ -30,8 +30,9 @@ Le da una imagen al fondo de las páginas.
 Posible futuro problema: si la página es muy larga, 
 se va a repetir la imagen y se verá feo
 */
-body{
-    background-image: url("../assets/ImagenTrekking_3456x2160.jpg");
+body.darkmode{
+    background-color: rgb(32, 32, 44);
+    color: white;
 }
 
 /*clase para el color del footer*/

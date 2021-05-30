@@ -20,7 +20,7 @@
     <!--al precargar js, se sugiere hacerlo al final del BODY-->
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
-<body>
+<body class="darkmode">
     <!--cambiar colores, nombres botones, etc-->
     <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
         <div class="container">
@@ -50,6 +50,9 @@
                     <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px"></a>
                     <a class="nav-link" href="registro.html">Crea una Cuenta</a>
                 </div>
+            </div>
+            <button id="bdark">Modo oscuro</button>
+            </div>
             </div>
         </div>
     </nav>
@@ -128,6 +131,30 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/reloj.js"></script>
+    <script> 
+        const bdark = document.querySelector('#bdark');
+        const body = document.querySelector('body');
+    
+        load();
+        
+        bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
+        store(body.classList.constains('darkmode'));});
+    
+        function load(){
+          const darkmode = localStorage.getItem('darkmode');
+    
+          if(!darkmode){
+            store('false');
+          }else if(darkmode== 'true'){
+            body.classList.add('darkmode');
+          }
+        }
+        function store(value){
+          localStorage.setItem('darkmode', value);
+        }
+      
+        
+        </script>
 </body>
      
 </html>
