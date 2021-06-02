@@ -70,3 +70,12 @@ descargué un ícono para el toggle del navbar*/
     color: green;
     visibility: visible;
 }
+
+/*clases usadas en producto.html para estandarizar tamaños de las tarjetas*/
+.max-altura-producto {
+    max-height: 286px;
+}
+
+.minima-altura-tarjeta {
+    min-height: 500px;
+}
