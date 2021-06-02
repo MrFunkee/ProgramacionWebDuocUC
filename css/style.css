@@ -79,3 +79,12 @@ descargué un ícono para el toggle del navbar*/
 .minima-altura-tarjeta {
     min-height: 500px;
 }
+
+.minima-altura-tarjeta-header {
+    min-height: 320px;
+    background-color: white;
+}
+
+.minima-altura-tarjeta-body {
+    min-height: 180px;
+}
