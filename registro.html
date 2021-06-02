@@ -65,7 +65,8 @@
       <div class="row">
           <div class="col-1 "></div>
           <div class="col md-6">
-              <form action="#" method="get" enctype="text/plain" id="formulario">
+                                                            <!-- no validate para que se tenga que validar con javascript-->
+              <form action="#" method="get" enctype="text/plain" id="formulario" novalidate>
                 <div class="card">
                     <div class="card-header bg-secondary text-light mt-3">
                         <h4 class="card-title text-center ">
@@ -87,8 +88,7 @@
                                 <label for="email">Email:</label>
                             </div>
                             <div class="col-10">
-                                        <!--se puso el type nombre para que se validara en javascript-->
-                                <input class= "form-control" type="nombre" id="email" name="email" placeholder="correo@correo.com" maxlength="50"> 
+                                <input class= "form-control" type="email" id="email" name="email" placeholder="correo@correo.com" maxlength="50"> 
                                 <small>Mensaje de Error</small>
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                                 <label class="font-weight-bold" for="fecha_nac">Fecha nacimiento:</label>
                             </div>
                             <div class="col-10">
-                                <input class="form-control" type="date" id="fecha_nac" name="fecha_nac" >
+                                <input class="form-control" type="date" id="fecha_nac" name="fecha_nac" min="1910-12-31" max="2021-12-31">
                                 <small>Mensaje de Error</small>
                             </div>
                         </div>
