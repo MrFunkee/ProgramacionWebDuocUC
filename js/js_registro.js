@@ -5,12 +5,14 @@
 const formu = document.getElementById("formulario");
 const nombre = document.getElementById("nombre");
 const rut = document.getElementById("rut");
+const email = document.getElementById("email");
+const fecha = document.getElementById("fecha_nac");
 const contra1 = document.getElementById("password");
 const contra2 = document.getElementById("validate-password");
 
 //regex para validar rut
 const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k]{1}');
-
+const regexEmail = new RegExp("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)");
 
 formu.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -22,16 +24,19 @@ function revisarCampos() {
     //conseguir valores de los Campo:
     const nombreValor = nombre.value.trim();
     const rutValor = rut.value.trim();
-    
+    const emailValor = email.value.trim();
+    const fechaValor = fecha.value;
+
+
+        //nombre
     if(nombreValor === null , nombreValor.length == 0 ) {
         mostrarError(nombre,'El campo está vacío');
 
     } else {
         afirmarCorrecto(nombre)
     }
-
+        //rut
     if(rutValor === null , rutValor.length == 0 ) {
-        //evento de error campo vacio
         mostrarError(rut,'El campo está vacío');
     } else if(!regexRut.test(rutValor)) {
         //viendo si se adapta al regex que dice 8 numeros, un guión y un número o "k"
@@ -40,7 +45,29 @@ function revisarCampos() {
     else {
         afirmarCorrecto(rut)
     }
-
+        //email
+    if(emailValor === null , emailValor.length == 0 ) {
+        mostrarError(email,'El campo está vacío');
+    } else if(!regexEmail.test(emailValor)) {
+        //viendo si se adapta al regex
+        mostrarError(email,'El formato del email está incorrecto. tiene que ser ej: correo@email.com');
+    }
+    else {
+        afirmarCorrecto(email)
+    }
+        //fecha
+        /*
+    if(fechaValor === null ) {
+        mostrarError(fecha,'El campo está vacío');
+        //poner validacion para ser mayor de edad
+    } else if() {
+        //viendo si la fecha ingresada es mayor de 18 años
+        mostrarError(fecha,'Tienes que ser mayor de 18 años');
+    }
+    else {
+        afirmarCorrecto(fecha)
+    }
+        */
     
 }
 //cambia el elemento small que es invisible y está debajo de los campos del formulario para mostrar el error dependiendo de la situación
@@ -52,6 +79,7 @@ function mostrarError (campo, mensaje) {
     small.innerText = mensaje;
 
     divPadre.classList.add("error");
+    small.style = 'color: red;'
 }
 
 //lo mismo que mostrarError() pero con el mensaje fijo de un ✔ verde
@@ -62,4 +90,5 @@ function afirmarCorrecto (campo) {
     small.innerText = '✔';
 
     divPadre.classList.add("correcto");
+    small.style = 'color: green;'
 }
