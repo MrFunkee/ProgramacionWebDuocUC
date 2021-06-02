@@ -26,8 +26,15 @@ function revisarCampos() {
     const rutValor = rut.value.trim();
     const emailValor = email.value.trim();
     const fechaValor = fecha.value;
+    const contra1Valor = contra1.value;
+    const contra2Valor = contra2.value;
 
-
+        //para trabajar fechas y ver si es mayor de 18
+    let cumple = new Date(fechaValor);
+    let diaHoy = new Date();
+    let diffFechas = Math.abs(diaHoy.getTime() - cumple.getTime());
+    let diffAnnios = Math.ceil(diffFechas / (1000 * 3600 * 24)/365);
+    
         //nombre
     if(nombreValor === null , nombreValor.length == 0 ) {
         mostrarError(nombre,'El campo está vacío');
@@ -35,39 +42,55 @@ function revisarCampos() {
     } else {
         afirmarCorrecto(nombre)
     }
+
         //rut
     if(rutValor === null , rutValor.length == 0 ) {
         mostrarError(rut,'El campo está vacío');
     } else if(!regexRut.test(rutValor)) {
         //viendo si se adapta al regex que dice 8 numeros, un guión y un número o "k"
         mostrarError(rut,'el rut tiene que ser escrito en el formato 12345678-9');
-    }
-    else {
+    } else {
         afirmarCorrecto(rut)
     }
+
         //email
     if(emailValor === null , emailValor.length == 0 ) {
         mostrarError(email,'El campo está vacío');
     } else if(!regexEmail.test(emailValor)) {
-        //viendo si se adapta al regex
+        //viendo si se adapta al regex de mail
         mostrarError(email,'El formato del email está incorrecto. tiene que ser ej: correo@email.com');
-    }
-    else {
+    } else {
         afirmarCorrecto(email)
     }
+
         //fecha
-        /*
-    if(fechaValor === null ) {
+    if(!fechaValor) {
         mostrarError(fecha,'El campo está vacío');
-        //poner validacion para ser mayor de edad
-    } else if() {
-        //viendo si la fecha ingresada es mayor de 18 años
+    } else if(diffAnnios < 18) {
         mostrarError(fecha,'Tienes que ser mayor de 18 años');
-    }
-    else {
+    } else {
         afirmarCorrecto(fecha)
     }
-        */
+
+        //contraseña 1
+    if(contra1Valor === null, contra1Valor.length == 0 ) {
+        mostrarError(contra1,'El campo está vacío');
+    } else if(contra1Valor.length < 8) {
+        mostrarError(contra1,'El largo de la contraseña tiene que ser por lo menos 8 caracteres.');
+    } else {
+        afirmarCorrecto(contra1)
+    }
+
+        //Contraseña 2
+    if(contra2Valor === null, contra2Valor.length == 0 ) {
+        mostrarError(contra2,'El campo está vacío');
+    } else if(contra1Valor != contra2Valor) {
+        mostrarError(contra2,'La contraseña acá no calza la contraseña escrita anteriormente.');
+    } else {
+        afirmarCorrecto(contra2)
+    }
+
+        
     
 }
 //cambia el elemento small que es invisible y está debajo de los campos del formulario para mostrar el error dependiendo de la situación
