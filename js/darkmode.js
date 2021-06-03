@@ -1,20 +1,25 @@
 const bdark = document.querySelector('#bdark');
-        const body = document.querySelector('body');
-    
-        load();
+const body = document.querySelector('body');
         
-        bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
-        store(body.classList.constains('darkmode'));});
-    
-        function load(){
-          const darkmode = localStorage.getItem('darkmode');
-    
-          if(!darkmode){
-            store('false');
-          }else if(darkmode== 'true'){
-            body.classList.add('darkmode');
-          }
-        }
-        function store(value){
-          localStorage.setItem('darkmode', value);
-        }
+const darkMode = () => {
+  body.classList.toggle('darkmode')
+}
+        
+  bdark.addEventListener('click', () => {
+            
+  setDarkMode = localStorage.getItem('darkmode');
+        
+  if(setDarkMode !== "on") {
+       darkMode();
+                
+  setDarkMode = localStorage.setItem('darkmode', 'on');
+    } else {
+       darkMode();
+               
+  setDarkMode = localStorage.setItem('darkmode', null);
+}});
+        
+let setDarkMode = localStorage.getItem('darkmode');
+    if(setDarkMode === 'on') {
+       darkMode();
+}      
