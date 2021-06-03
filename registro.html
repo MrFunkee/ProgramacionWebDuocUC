@@ -70,7 +70,7 @@
                 <div class="card">
                     <div class="card-header bg-secondary text-light mt-3">
                         <h4 class="card-title text-center ">
-                            Ingresa tus datos para crearte una cuenta
+                            Ingresa tus datos para crear una cuenta
                         </h4>
                     </div>
                     <div class="card-body">
@@ -97,8 +97,17 @@
                                 <label for="rut">Rut: </label>
                             </div>
                             <div class="col-10">
-                                <input class= "form-control" type="rut" id="rut" name="rut" placeholder="123456789-9" maxlength="10"> 
+                                <input class= "form-control" type="rut" id="rut" name="rut" placeholder="123456789-9" maxlength="12"> 
                                 <small>Mensaje de Error</small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2">
+                                <label for="telefono">Teléfono: </label>
+                            </div>
+                            <div class="col-10">
+                                <input class= "form-control" type="tel" id="telefono" name="telefono" placeholder="9 1234 5678" maxlength="18"> 
+                                <small style="visibility: visible;">Sin agregar +56</small>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -128,7 +137,15 @@
                                 <small>Mensaje de Error</small>
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            <div class="col-2">
+                                <label for="comentario">¿Qué es lo que más te gusta de viajar?</label>
+                            </div>
+                            <div class="col-10">
+                                <textarea class= "form-control" name="comentario" id="comentario" cols="30" rows="3" maxlength="300"></textarea>
+                                <small>Mensaje de Error</small>
+                            </div>
+                        </div>
                         
                     </div>
                     <div class="card-footer">

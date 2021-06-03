@@ -9,10 +9,13 @@ const email = document.getElementById("email");
 const fecha = document.getElementById("fecha_nac");
 const contra1 = document.getElementById("password");
 const contra2 = document.getElementById("validate-password");
+const telef = document.getElementById("telefono");
+const coment = document.getElementById("comentario");
 
 //regex para validar rut
 const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k]{1}');
 const regexEmail = new RegExp("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)");
+const regexTelef = new RegExp("[0-9]{9}")
 
 formu.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -28,6 +31,8 @@ function revisarCampos() {
     const fechaValor = fecha.value;
     const contra1Valor = contra1.value;
     const contra2Valor = contra2.value;
+    const telefValor = telef.value.replace(/ /g, "");
+    const comentValor = coment.value.trim();
 
         //para trabajar fechas y ver si es mayor de 18
     let cumple = new Date(fechaValor);
@@ -90,7 +95,22 @@ function revisarCampos() {
         afirmarCorrecto(contra2)
     }
 
-        
+        //telefono
+    if(telefValor === null , telefValor.length == 0 ) {
+        mostrarError(telef,'El campo está vacío');
+    } else if(!regexTelef.test(telefValor) || telefValor.length>9) {
+        //viendo si se adapta al regex de mail
+        mostrarError(telef,'Por favor, ingrese solo 9 números');
+    } else {
+        afirmarCorrecto(telef)
+    }
+
+        //Comentario
+    if(comentValor === null , comentValor.length == 0 ) {
+        mostrarError(coment,'Deja una opinión por favor!');
+    } else {
+        afirmarCorrecto(coment)
+    }
     
 }
 //cambia el elemento small que es invisible y está debajo de los campos del formulario para mostrar el error dependiendo de la situación
@@ -114,4 +134,33 @@ function afirmarCorrecto (campo) {
 
     divPadre.classList.add("correcto");
     small.style = 'color: green;'
+}
+
+
+//FUNCION QUE PIDEN DEL RUT
+
+rut.addEventListener('keyup', (e) =>{
+    revisarCaracteres();
+});
+
+function revisarCaracteres () {
+    const rutNumero = rut.value.trim();
+    let caracteresFaltantes = 10 - rutNumero.length;
+    const divPadre = rut.parentElement;
+    const small = divPadre.querySelector("small");
+
+    if (caracteresFaltantes >= 1) {
+        small.innerText = 'Faltan '+caracteresFaltantes +' caracteres.';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    } else if (caracteresFaltantes == 0) {
+        small.innerText = 'Número de caracteres correcto';
+        divPadre.classList.add("correcto");
+        small.style = 'color: green;';
+    } else {
+        small.innerText = 'Te excediste con el número de caracteres, tienen que ser 10';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    }
+
 }
