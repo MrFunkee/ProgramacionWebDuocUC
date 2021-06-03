@@ -72,6 +72,61 @@
                 </div>
             </div>
         </div>
+        <!--SECCION CONVERTIDOR DE MONEDAS-->
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                </div>
+                <div class="col-5">
+                    <div class="card ">
+                        <div class="card-header ">
+                            <div class="card text-dark text-center">
+                                <h3>Consulta Valores del Peso Chileno!</h3>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <input type="tel" class="form-control" id="pesosConvertir" name="pesos" placeholder="Ingresa la cantidad de pesos chilenos $0000" style="text-align: center;">
+                            <div class="card mt-2 mb-2">    
+                                <button class="btn btn-warning btn-lg active" onclick="cambioDolar()" type="button" aria-pressed="true">DOLAR<span></span></button> 
+                            </div>
+                            <div class="card">
+                                <button class="btn btn-success btn-lg active" onclick="cambioEuro()" type="button" aria-pressed="true">EURO</button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-body">
+                                <h4 class="card-text text-center" id="resultado1">
+                                    h
+                                </h4>
+                                <h4 class="card-text text-center" id="resultado2">
+                                    hola
+                                </h4>
+                                <small class="card-text text-center" id="resultado3">
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  DESECHADO: CONVERTIDOR DE PRECIOS DE LAS TARJETAS
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-3">
+                    <h4>Elija su moneda de preferencia:</h1>
+                    <div class="form-group">
+                        <select name="moneda" id="moneda" class="form-control">
+                            <option value="clp">Peso Chileno</option>
+                            <option value="usd">Dolar EEUU</option>
+                            <option value="eur">Euro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
 
         <!--Sección Producto en Tarjetas-->
         <div class="container text-center">
@@ -84,8 +139,8 @@
                         <div class="card-body minima-altura-tarjeta-body">
                             <h4 >NUEVO PRODUCTO </h4>
                             <h5 class="card-title">Gorra Bambu</h5>
-                            <p>
-                                $ 10.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">10000</span> <span class="simboloDinero">CLP</span>
                             </p>
                         </div>
                         <div class="card-footer">
@@ -100,8 +155,8 @@
                         </div>
                         <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza paisaje japones</h5>
-                            <p>
-                                $ 7000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
                         </div>
                         <div class="card-footer">
@@ -116,8 +171,8 @@
                         </div>
                         <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Polera sin mangas</h5>
-                            <p>
-                                $ 15.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">15000</span> <span class="simboloDinero">CLP</span>
                             </p>
                         </div>
                         <div class="card-footer">
@@ -135,8 +190,8 @@
                         </div>
                         <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza torre Eiffel</h5>
-                            <p>
-                                $ 7000
+                            <p class="dinero-y-simbolo">
+                                 <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
                         </div>
                         <div class="card-footer">
@@ -151,8 +206,8 @@
                         </div>
                         <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza Ciudad nocturna</h5>
-                            <p>
-                                $ 7.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
                         </div>
                         <div class="card-footer">
@@ -213,6 +268,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/reloj.js"></script>
     <script src="js/darkmode.js"></script>
+    <script src="js/convertidorDinero.js"></script>
         
       
         
