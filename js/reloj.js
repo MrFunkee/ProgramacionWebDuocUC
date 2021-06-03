@@ -5,6 +5,7 @@ function actual() {
     var segundo=fecha.getSeconds(); //segundo actual
     var dia = fecha.getDate();
     var mes = fecha.getMonth();
+    var year = fecha.getFullYear();
     
     if (hora<10) { //dos cifras para la hora
        hora="0"+hora;
@@ -21,7 +22,7 @@ function actual() {
 
     //ver en el recuadro del reloj:
 
-    mireloj = hora+" : "+minuto+" : "+segundo+"/"+dia+" de "+mes;	
+    mireloj = hora+" : "+minuto+" : "+segundo+" | "+dia+" de "+mes+" del "+year;	
             return mireloj; 
     }   
     
