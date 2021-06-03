@@ -135,3 +135,32 @@ function afirmarCorrecto (campo) {
     divPadre.classList.add("correcto");
     small.style = 'color: green;'
 }
+
+
+//FUNCION QUE PIDEN DEL RUT
+
+rut.addEventListener('keyup', (e) =>{
+    revisarCaracteres();
+});
+
+function revisarCaracteres () {
+    const rutNumero = rut.value.trim();
+    let caracteresFaltantes = 10 - rutNumero.length;
+    const divPadre = rut.parentElement;
+    const small = divPadre.querySelector("small");
+
+    if (caracteresFaltantes >= 1) {
+        small.innerText = 'Faltan '+caracteresFaltantes +' caracteres.';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    } else if (caracteresFaltantes == 0) {
+        small.innerText = 'Número de caracteres correcto';
+        divPadre.classList.add("correcto");
+        small.style = 'color: green;';
+    } else {
+        small.innerText = 'Te excediste con el número de caracteres, tienen que ser 10';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    }
+
+}
