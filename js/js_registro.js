@@ -16,7 +16,7 @@ const usuario = document.getElementById("usuario");
 
 
 //regex para validar rut
-const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k]{1}');
+const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k/K]{1}');
 const regexEmail = new RegExp("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)");
 const regexTelef = new RegExp("[0-9]{9}")
 
