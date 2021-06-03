@@ -11,6 +11,9 @@ const contra1 = document.getElementById("password");
 const contra2 = document.getElementById("validate-password");
 const telef = document.getElementById("telefono");
 const coment = document.getElementById("comentario");
+const apellido = document.getElementById("apellido");
+const usuario = document.getElementById("usuario");
+
 
 //regex para validar rut
 const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k]{1}');
@@ -33,6 +36,8 @@ function revisarCampos() {
     const contra2Valor = contra2.value;
     const telefValor = telef.value.replace(/ /g, "");
     const comentValor = coment.value.trim();
+    const apellidoValor = apellido.value.trim();
+    const usuarioValor = usuario.value.trim();
 
         //para trabajar fechas y ver si es mayor de 18
     let cumple = new Date(fechaValor);
@@ -46,6 +51,21 @@ function revisarCampos() {
 
     } else {
         afirmarCorrecto(nombre)
+    }
+    
+        //apellido
+    if(apellidoValor === null , apellidoValor.length == 0 ) {
+        mostrarError(apellido,'El campo está vacío');
+
+    } else {
+        afirmarCorrecto(apellido)
+    }
+
+        //nombre de usuario
+    if(usuarioValor === null , usuarioValor.length == 0 ) {
+        mostrarError(usuario,'El campo está vacío');
+    } else {
+        afirmarCorrecto(usuario)
     }
 
         //rut
