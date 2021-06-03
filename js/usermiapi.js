@@ -64,7 +64,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 
         var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open ('GET','https://randomuser.me/api/',true);
+        xmlhttp.open ('GET','https://randomuser.me/api/?age>17',true);
         xmlhttp.send();
         
   
@@ -75,7 +75,7 @@ $(document).ready(function(){
                 for(var i = 0; i < data.results.length;i++){
                     var txtNombre = data.results[i].name.first+' '+data.results[i].name.last;
                     var txtEmail = data.results[i].email;
-                    var txtEdad = data.results[i].registered.age;
+                    var txtEdad = data.results[i].dob.age;
                     var txtPais = data.results[i].location.country;
                     var txtcell = data.results[i].cell;
                     
