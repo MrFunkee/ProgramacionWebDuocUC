@@ -46,18 +46,23 @@
                 <li class="nav-item">
                     <a class="nav-link" href="acerca_de.html">Quienes somos</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="usermi.html">Empleados</a>
+              </li>
             </ul>
             <div class="my-2 my-lg-0">
                 <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
                 <a class="nav-link" href="registro.html">Crea una Cuenta</a>
             </div>
-        </div>
-        <button id="bdark">Modo oscuro</button>
-        </div>
-    </div>
-</nav>
-  <!-- FIN NAVEGADOR-->  
-  <!-- CARRUSEL-->
+            <div class="toggle-btns">
+              <div class="toggle-btn">
+                <input type="checkbox" id="toggle-btn-1">
+                <label id="bdark" for="toggle-btn-1"></label>
+              </div>
+      </div>
+  </nav>
+    <!-- FIN NAVEGADOR-->  
+    <!-- CARRUSEL-->
   <div class="container mb-1 mt-3">
       <div class="row text-center">
         
@@ -110,14 +115,7 @@
         </div>
       </div>
   </div>
-    <!-- FIN CARRUSEL-->
-    <!-- SEPARADOR-->
-    <div class="container">
-      <div class="row  mt-1 ">
-        <p></p>
-      </div>
-    </div>
-    <!--FIN  SEPARADOR-->
+      
   <!-- CARD INFORMACION ejemplo como pueden ir los articulos  -->
   <!-- ARTICULO 1-->
   <div class="container mt-1 mb-1 bg-danger">
@@ -222,29 +220,7 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/reloj.js"></script>
-  <script> 
-    const bdark = document.querySelector('#bdark');
-    const body = document.querySelector('body');
-
-    load();
-    
-    bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
-    store(body.classList.constains('darkmode'));});
-
-    function load(){
-      const darkmode = localStorage.getItem('darkmode');
-
-      if(!darkmode){
-        store('false');
-      }else if(darkmode== 'true'){
-        body.classList.add('darkmode');
-      }
-    }
-    function store(value){
-      localStorage.setItem('darkmode', value);
-    }
-  
-    
-    </script>
+  <script src="js/darkmode.js"></script>
+  <script src="js/convertidormoneda.js"></script>
 </body>
 </html>

@@ -1,40 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es-cl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>{% block title%}{% endblock %}</title>
     <!--icono tab-->
-    <link rel="icon" href="assets/IconoBotas500x500.png">
+    <link rel="icon" href="{% static 'core/assets/IconoBotas500x500.png' %}">
         <!--precargar bootstrap local-->
     <!--Usar el css bootstrap.css, el min es más liviano pero es lo mismo-->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}" type="text/css">
 
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href="use.fontawesome.com/releases/v5.8.2/css/all.css">
 
     <!--STYLE PERSONAL-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'core/css/estilorelojs.css' %}" type="text/css">
     <!--al precargar js, se sugiere hacerlo al final del BODY-->
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
 <body class="darkmode">
     <!--cambiar colores, nombres botones, etc-->
+    <!-- NAVEGADOR-->
     <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="assets/Logo.png" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
-            A la punta del cerro</a>
+            <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'core/assets/Logo.png' %}" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
+                A la punta del cerro
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>             
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>             
                     </li>
-                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
+                    <img src="{% static 'core/assets/IconoBotas500x500.png' %}" alt="LOGO" width="50px" height="50px">
                     <li class="nav-item">
                         <a class="nav-link" href="producto.html">Productos</a>
                     </li>
@@ -42,36 +45,19 @@
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="acerca_de.html">Quienes somos</a>
+                        <a class="nav-link" href="{% url 'acerca_de' %}">Quienes somos</a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
+                    <a class="nav-link" href="{% static 'core/inicio_sesion.html' %}">Iniciar Sesión</a>
                     <a class="nav-link" href="registro.html">Crea una Cuenta</a>
                 </div>
-                <div class="toggle-btns">
-                    <div class="toggle-btn">
-                      <input type="checkbox" id="toggle-btn-1">
-                      <label id="bdark" for="toggle-btn-1"></label>
-                    </div>
             </div>
+            <button id="bdark">Modo oscuro</button>
         </div>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h3 class="text-weight-bold mt-4">¡En construcción!</h3>
-                <p>Paciencia por favor...</p>
-            </div>
-            <div class="col-md-6">
-                <img src="assets/temporal/en_construccion.jpg" alt="">
-            </div>
-        </div>
-    </div>
-
-
-       <!--Footer Section -->
-       <footer class="footer bg-rojo-oscuro mt-4 py-3">
+    {% block content %}{% endblock %}
+    <footer class="footer bg-rojo-oscuro  py-3">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-3 mt-4">
@@ -99,19 +85,44 @@
                     </nav>
                 </div>
                 <div class="col-sm-12 col-md-3 text-center mt-4">
-                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
+                    <img src="{% static 'core/assets/IconoBotas500x500.png' %}" alt="LOGO" width="150px" height="150px">
+                    <div id="reloj" class="reloj">
+                    </div>
+                    <div id="fecha"></div>
                 </div>
             </div>
+             
         </div>
+        
     </footer>
-
-    
+</body>
         <!-- Preacargar JS Boostrap al final del documento -->
     <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/darkmode.js"></script>
-</body>
+    <script src="{% static 'core/js/jquery-3.5.1.slim.min.js' %}"></script>
+    <script src="{% static 'core/js/popper.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'core/js/reloj.js' %}"></script>
+    <script> 
+      const bdark = document.querySelector('#bdark');
+      const body = document.querySelector('body');
+  
+      load();
+      
+      bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
+      store(body.classList.constains('darkmode'));});
+  
+      function load(){
+        const darkmode = localStorage.getItem('darkmode');
+  
+        if(!darkmode){
+          store('false');
+        }else if(darkmode== 'true'){
+          body.classList.add('darkmode');
+        }
+      }
+      function store(value){
+        localStorage.setItem('darkmode', value);
+      }
+      </script>
      
 </html>

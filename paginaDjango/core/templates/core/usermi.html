@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
+    <title>Empleados</title>
     <!--icono tab-->
     <link rel="icon" href="assets/IconoBotas500x500.png">
         <!--precargar bootstrap local-->
@@ -16,6 +16,7 @@
 
     <!--STYLE PERSONAL-->
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/estilorelojs.css" type="text/css">
     <!--al precargar js, se sugiere hacerlo al final del BODY-->
         <!--orden de carga es JS, Popper, Bostrap.js-->
 </head>
@@ -31,18 +32,22 @@
             
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>             
-                    </li>
-                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
                     <li class="nav-item">
-                        <a class="nav-link" href="producto.html">Productos</a>
+                        <a class="nav-link" aria-current="page" href="index.html">Inicio</a>             
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" href="producto.html">Productos</a>
+                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="acerca_de.html">Quienes somos</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="usermi.html">Empleados</a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
@@ -56,20 +61,49 @@
                     </div>
             </div>
         </div>
-    </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <h3 class="text-weight-bold mt-4">¡En construcción!</h3>
-                <p>Paciencia por favor...</p>
-            </div>
-            <div class="col-md-6">
-                <img src="assets/temporal/en_construccion.jpg" alt="">
             </div>
         </div>
-    </div>
+    </nav>
+      <!--Inicio de sesion-->
+      <br><br><br><br><br>
+      <div class="container mb-4 mt-4">
+        <h2>Lista de nuestros empleados y sus contactos</h2>
+        <div class="card-group">
+            <div class="card ">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto"></p>
+                        <p class="card-parrafo text-center" id="informacion"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre2"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto2"></p>
+                        <p class="card-parrafo text-center" id="informacion2"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre3"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto3"></p>
+                        <p class="card-parrafo text-center" id="informacion3"></p>
+                    </div>
+                </div>
+            </div>
 
-
+        </div>
+      </div>
+     
+        
+    </div> 
+    <br><br><br><br><br>
+      <!--Fin Inicio sesion-->           
        <!--Footer Section -->
        <footer class="footer bg-rojo-oscuro mt-4 py-3">
         <div class="container">
@@ -100,6 +134,8 @@
                 </div>
                 <div class="col-sm-12 col-md-3 text-center mt-4">
                     <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
+                    <div id="reloj" class="reloj">
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,7 +147,9 @@
     <script src="js/jquery-3.5.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/reloj.js"></script>
     <script src="js/darkmode.js"></script>
+    <script src="js/usermiapi.js"></script>
 </body>
      
 </html>

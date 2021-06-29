@@ -45,14 +45,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="acerca_de.html">Quienes somos</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usermi.html">Empleados</a>
+                    </li>
                 </ul>
                 <div class="my-2 my-lg-0">
                     <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
                     <a class="nav-link" href="registro.html">Crea una Cuenta</a>
                 </div>
-            </div>
-            <button  id="bdark">Modo oscuro</button>
-            </div>
+                <div class="toggle-btns">
+                    <div class="toggle-btn">
+                      <input type="checkbox" id="toggle-btn-1">
+                      <label id="bdark" for="toggle-btn-1"></label>
+                    </div>
             </div>
         </div>
     </nav>
@@ -67,44 +72,108 @@
                 </div>
             </div>
         </div>
+        <!--SECCION CONVERTIDOR DE MONEDAS-->
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                </div>
+                <div class="col-5">
+                    <div class="card ">
+                        <div class="card-header ">
+                            <div class="card text-dark text-center">
+                                <h3>Consulta Valores del Peso Chileno!</h3>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <input type="tel" class="form-control" id="pesosConvertir" name="pesos" placeholder="Ingresa la cantidad de pesos chilenos $0000" style="text-align: center;">
+                            <div class="card mt-2 mb-2">    
+                                <button class="btn btn-warning btn-lg active" onclick="cambioDolar()" type="button" aria-pressed="true">DOLAR<span></span></button> 
+                            </div>
+                            <div class="card">
+                                <button class="btn btn-success btn-lg active" onclick="cambioEuro()" type="button" aria-pressed="true">EURO</button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-body">
+                                <h4 class="card-text text-center" id="resultado1">
+                                </h4>
+                                <h4 class="card-text text-center" id="resultado2">
+                                </h4>
+                                <small class="card-text text-center" id="resultado3">
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  DESECHADO: CONVERTIDOR DE PRECIOS DE LAS TARJETAS
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-4">
+                </div>
+                <div class="col-3">
+                    <h4>Elija su moneda de preferencia:</h1>
+                    <div class="form-group">
+                        <select name="moneda" id="moneda" class="form-control">
+                            <option value="clp">Peso Chileno</option>
+                            <option value="usd">Dolar EEUU</option>
+                            <option value="eur">Euro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
 
         <!--Sección Producto en Tarjetas-->
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-4">
-    
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img class= "card-img-top"src="assets/productos/gorraBambu.jpg" alt="gorraBambu" class="card-img-top">
-                        <div class="card-body">
+                    <div class="card border-dark minima-altura-tarjeta" style="width: 18rem;">
+                        <div class="card-header minima-altura-tarjeta-header">
+                            <img class= "card-img-top max-altura-producto" src="assets/productos/gorraBambu.jpg" alt="gorraBambu" class="card-img-top">
+                        </div>
+                        <div class="card-body minima-altura-tarjeta-body">
                             <h4 >NUEVO PRODUCTO </h4>
                             <h5 class="card-title">Gorra Bambu</h5>
-                            <p>
-                                $ 10.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">10000</span> <span class="simboloDinero">CLP</span>
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <button type="button" class="btn btn-primary btn-sm">Comprar!</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img src="assets/productos/paisajeJapones.jpg" alt="Taza paisajeJapones" class="card-img-top">
-                        <div class="card-body">
+                    <div class="card border-dark minima-altura-tarjeta" style="width: 18rem;">
+                        <div class="card-header minima-altura-tarjeta-header">
+                            <img class= "card-img-top max-altura-producto" src="assets/productos/paisajeJapones.jpg" alt="Taza paisajeJapones" class="card-img-top">
+                        </div>
+                        <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza paisaje japones</h5>
-                            <p>
-                                $ 7000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <button type="button" class="btn btn-primary btn-sm">Comprar!</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img src="assets/productos/polera.jpg" alt="polera" class="card-img-top " width="500" height="280">
-                        <div class="card-body">
+                    <div class="card border-dark minima-altura-tarjeta" style="width: 18rem;">
+                        <div class="card-header minima-altura-tarjeta-header">
+                            <img class= "card-img-top max-altura-producto" src="assets/productos/polera.jpg" alt="polera" class="card-img-top " width="500" height="280">
+                        </div>
+                        <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Polera sin mangas</h5>
-                            <p>
-                                $ 15.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">15000</span> <span class="simboloDinero">CLP</span>
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <button type="button" class="btn btn-primary btn-sm">Comprar!</button>
                         </div>
                     </div>
@@ -113,25 +182,33 @@
 
             <div class="row mt-4">
                 <div class="col-md-4">
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img src="assets/productos/torreeiffek.jpg" alt="tazatorreiffeil" class="card-img-top" height="280" width="500" >
-                        <div class="card-body">
+                    <div class="card border-dark minima-altura-tarjeta" style="width: 18rem;">
+                        <div class="card-header minima-altura-tarjeta-header">
+                            <img class= "card-img-top max-altura-producto" src="assets/productos/torreeiffek.jpg" alt="tazatorreiffeil" class="card-img-top" height="280" width="500" >
+                        </div>
+                        <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza torre Eiffel</h5>
-                            <p>
-                                $ 7000
+                            <p class="dinero-y-simbolo">
+                                 <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <button type="button" class="btn btn-primary btn-sm">Comprar!</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card border-dark" style="width: 18rem;">
-                        <img src="assets/productos/tazaCiudadnoche.jpg" alt="tazaCiudadnoche" class="card-img-top" height="200" width="400">
-                        <div class="card-body">
+                    <div class="card border-dark minima-altura-tarjeta" style="width: 18rem;">
+                        <div class="card-header minima-altura-tarjeta-header">
+                            <img class= "card-img-top max-altura-producto mt-4" src="assets/productos/tazaCiudadnoche.jpg" alt="tazaCiudadnoche" class="card-img-top" height="200" width="400">
+                        </div>
+                        <div class="card-body minima-altura-tarjeta-body">
                             <h5 class="card-title">Taza Ciudad nocturna</h5>
-                            <p>
-                                $ 7.000
+                            <p class="dinero-y-simbolo">
+                                <span class="dinero">7000</span> <span class="simboloDinero">CLP</span>
                             </p>
+                        </div>
+                        <div class="card-footer">
                             <button type="button" class="btn btn-primary btn-sm">Comprar!</button>
                         </div>
                     </div>
@@ -188,30 +265,12 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/reloj.js"></script>
-    <script> 
-        const bdark = document.querySelector('#bdark');
-        const body = document.querySelector('body');
-    
-        load();
+    <script src="js/darkmode.js"></script>
+    <script src="js/convertidorDinero.js"></script>
         
-        bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
-        store(body.classList.constains('darkmode'));});
-    
-        function load(){
-          const darkmode = localStorage.getItem('darkmode');
-    
-          if(!darkmode){
-            store('false');
-          }else if(darkmode== 'true'){
-            body.classList.add('darkmode');
-          }
-        }
-        function store(value){
-          localStorage.setItem('darkmode', value);
-        }
       
         
-        </script>
+      
 </body>
      
 </html>

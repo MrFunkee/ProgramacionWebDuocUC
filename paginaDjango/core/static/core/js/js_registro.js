@@ -5,12 +5,20 @@
 const formu = document.getElementById("formulario");
 const nombre = document.getElementById("nombre");
 const rut = document.getElementById("rut");
+const email = document.getElementById("email");
+const fecha = document.getElementById("fecha_nac");
 const contra1 = document.getElementById("password");
 const contra2 = document.getElementById("validate-password");
+const telef = document.getElementById("telefono");
+const coment = document.getElementById("comentario");
+const apellido = document.getElementById("apellido");
+const usuario = document.getElementById("usuario");
+
 
 //regex para validar rut
-const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k]{1}');
-
+const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k/K]{1}');
+const regexEmail = new RegExp("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)");
+const regexTelef = new RegExp("[0-9]{9}")
 
 formu.addEventListener('submit', (e) =>{
     e.preventDefault();
@@ -22,25 +30,107 @@ function revisarCampos() {
     //conseguir valores de los Campo:
     const nombreValor = nombre.value.trim();
     const rutValor = rut.value.trim();
+    const emailValor = email.value.trim();
+    const fechaValor = fecha.value;
+    const contra1Valor = contra1.value;
+    const contra2Valor = contra2.value;
+    const telefValor = telef.value.replace(/ /g, "");
+    const comentValor = coment.value.trim();
+    const apellidoValor = apellido.value.trim();
+    const usuarioValor = usuario.value.trim();
+
+        //para trabajar fechas y ver si es mayor de 18
+    let cumple = new Date(fechaValor);
+    let diaHoy = new Date();
+    let diffFechas = Math.abs(diaHoy.getTime() - cumple.getTime());
+    let diffAnnios = Math.ceil(diffFechas / (1000 * 3600 * 24)/365);
     
+        //nombre
     if(nombreValor === null , nombreValor.length == 0 ) {
         mostrarError(nombre,'El campo está vacío');
 
     } else {
         afirmarCorrecto(nombre)
     }
+    
+        //apellido
+    if(apellidoValor === null , apellidoValor.length == 0 ) {
+        mostrarError(apellido,'El campo está vacío');
 
+    } else {
+        afirmarCorrecto(apellido)
+    }
+
+        //nombre de usuario
+    if(usuarioValor === null , usuarioValor.length == 0 ) {
+        mostrarError(usuario,'El campo está vacío');
+    } else {
+        afirmarCorrecto(usuario)
+    }
+
+        //rut
     if(rutValor === null , rutValor.length == 0 ) {
-        //evento de error campo vacio
         mostrarError(rut,'El campo está vacío');
     } else if(!regexRut.test(rutValor)) {
         //viendo si se adapta al regex que dice 8 numeros, un guión y un número o "k"
         mostrarError(rut,'el rut tiene que ser escrito en el formato 12345678-9');
-    }
-    else {
+    } else {
         afirmarCorrecto(rut)
     }
 
+        //email
+    if(emailValor === null , emailValor.length == 0 ) {
+        mostrarError(email,'El campo está vacío');
+    } else if(!regexEmail.test(emailValor)) {
+        //viendo si se adapta al regex de mail
+        mostrarError(email,'El formato del email está incorrecto. tiene que ser ej: correo@email.com');
+    } else {
+        afirmarCorrecto(email)
+    }
+
+        //fecha
+    if(!fechaValor) {
+        mostrarError(fecha,'El campo está vacío');
+    } else if(diffAnnios < 18) {
+        mostrarError(fecha,'Tienes que ser mayor de 18 años');
+    } else {
+        afirmarCorrecto(fecha)
+    }
+
+        //contraseña 1
+    if(contra1Valor === null, contra1Valor.length == 0 ) {
+        mostrarError(contra1,'El campo está vacío');
+    } else if(contra1Valor.length < 8) {
+        mostrarError(contra1,'El largo de la contraseña tiene que ser por lo menos 8 caracteres.');
+    } else {
+        afirmarCorrecto(contra1)
+    }
+
+        //Contraseña 2
+    if(contra2Valor === null, contra2Valor.length == 0 ) {
+        mostrarError(contra2,'El campo está vacío');
+    } else if(contra1Valor != contra2Valor) {
+        mostrarError(contra2,'La contraseña acá no calza la contraseña escrita anteriormente.');
+    } else {
+        afirmarCorrecto(contra2)
+    }
+
+        //telefono
+    if(telefValor === null , telefValor.length == 0 ) {
+        mostrarError(telef,'El campo está vacío');
+    } else if(!regexTelef.test(telefValor) || telefValor.length>9) {
+        //viendo si se adapta al regex de mail
+        mostrarError(telef,'Por favor, ingrese solo 9 números');
+    } else {
+        afirmarCorrecto(telef)
+    }
+
+        //Comentario
+    if(comentValor === null , comentValor.length == 0 ) {
+        mostrarError(coment,'Deja una opinión por favor!');
+    } else {
+        afirmarCorrecto(coment)
+    }
     
 }
 //cambia el elemento small que es invisible y está debajo de los campos del formulario para mostrar el error dependiendo de la situación
@@ -52,6 +142,7 @@ function mostrarError (campo, mensaje) {
     small.innerText = mensaje;
 
     divPadre.classList.add("error");
+    small.style = 'color: red;'
 }
 
 //lo mismo que mostrarError() pero con el mensaje fijo de un ✔ verde
@@ -62,4 +153,34 @@ function afirmarCorrecto (campo) {
     small.innerText = '✔';
 
     divPadre.classList.add("correcto");
+    small.style = 'color: green;'
+}
+
+
+//FUNCION QUE PIDEN DEL RUT
+
+rut.addEventListener('keyup', (e) =>{
+    revisarCaracteres();
+});
+
+function revisarCaracteres () {
+    const rutNumero = rut.value.trim();
+    let caracteresFaltantes = 10 - rutNumero.length;
+    const divPadre = rut.parentElement;
+    const small = divPadre.querySelector("small");
+
+    if (caracteresFaltantes >= 1) {
+        small.innerText = 'Faltan '+caracteresFaltantes +' caracteres.';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    } else if (caracteresFaltantes == 0) {
+        small.innerText = 'Número de caracteres correcto';
+        divPadre.classList.add("correcto");
+        small.style = 'color: green;';
+    } else {
+        small.innerText = 'Te excediste con el número de caracteres, tienen que ser 10';
+        divPadre.classList.add("error");
+        small.style = 'color: red;';
+    }
+
 }

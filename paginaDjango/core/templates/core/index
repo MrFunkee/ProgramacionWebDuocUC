@@ -4,7 +4,6 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-    <!-- CARRUSEL-->
   <div class="container mb-1 mt-3">
       <div class="row text-center">
         
@@ -57,7 +56,14 @@
         </div>
       </div>
   </div>
-      
+    <!-- FIN CARRUSEL-->
+    <!-- SEPARADOR-->
+    <div class="container">
+      <div class="row  mt-1 ">
+        <p></p>
+      </div>
+    </div>
+    <!--FIN  SEPARADOR-->
   <!-- CARD INFORMACION ejemplo como pueden ir los articulos  -->
   <!-- ARTICULO 1-->
   <div class="container mt-1 mb-1 bg-danger">
@@ -114,4 +120,39 @@
     
     <!-- FIN ARTICULO 2-->
 
+  <!-- FIN CARD INFORMACION-->
+     <!--Footer Section -->
 {% endblock %}
+
+      <!-- Preacargar JS Boostrap al final del documento -->
+  <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
+  <script src="js/jquery-3.5.1.slim.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/reloj.js"></script>
+  <script> 
+    const bdark = document.querySelector('#bdark');
+    const body = document.querySelector('body');
+
+    load();
+    
+    bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
+    store(body.classList.constains('darkmode'));});
+
+    function load(){
+      const darkmode = localStorage.getItem('darkmode');
+
+      if(!darkmode){
+        store('false');
+      }else if(darkmode== 'true'){
+        body.classList.add('darkmode');
+      }
+    }
+    function store(value){
+      localStorage.setItem('darkmode', value);
+    }
+  
+    
+    </script>
+</body>
+</html>

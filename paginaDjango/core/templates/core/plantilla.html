@@ -26,7 +26,7 @@
     <!-- NAVEGADOR-->
     <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
         <div class="container">
-            <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'core/assets/Logo.png' %}" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
+            <a href="index.html" class="navbar-brand"><img src="{% static 'core/assets/Logo.png' %}" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
                 A la punta del cerro
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="{% static 'core/index.html' %}">Inicio</a>             
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>             
                     </li>
                     <img src="{% static 'core/assets/IconoBotas500x500.png' %}" alt="LOGO" width="50px" height="50px">
                     <li class="nav-item">
@@ -45,18 +45,28 @@
                         <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% static 'core/acerca_de.html' %}">Quienes somos</a>
+                        <a class="nav-link" href="acerca_de.html">Quienes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usermi.html">Empleados</a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    <a class="nav-link" href="{% static 'core/inicio_sesion.html' %}">Iniciar Sesión</a>
+                    <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
                     <a class="nav-link" href="registro.html">Crea una Cuenta</a>
                 </div>
+                <div class="toggle-btns">
+                    <div class="toggle-btn">
+                        <input type="checkbox" id="toggle-btn-1">
+                        <label id="bdark" for="toggle-btn-1"></label>
+                    </div>
+                </div>
             </div>
-            <button id="bdark">Modo oscuro</button>
         </div>
     </nav>
-    {% block content %}{% endblock %}
+
+{% block content %}{% endblock %}
+       <!--Footer Section -->
     <footer class="footer bg-rojo-oscuro  py-3">
         <div class="container">
             <div class="row">
@@ -90,39 +100,16 @@
                     </div>
                     <div id="fecha"></div>
                 </div>
-            </div>
-             
+            </div>  
         </div>
-        
     </footer>
-</body>
         <!-- Preacargar JS Boostrap al final del documento -->
     <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
     <script src="{% static 'core/js/jquery-3.5.1.slim.min.js' %}"></script>
     <script src="{% static 'core/js/popper.min.js' %}"></script>
     <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'core/js/reloj.js' %}"></script>
-    <script> 
-      const bdark = document.querySelector('#bdark');
-      const body = document.querySelector('body');
-  
-      load();
-      
-      bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
-      store(body.classList.constains('darkmode'));});
-  
-      function load(){
-        const darkmode = localStorage.getItem('darkmode');
-  
-        if(!darkmode){
-          store('false');
-        }else if(darkmode== 'true'){
-          body.classList.add('darkmode');
-        }
-      }
-      function store(value){
-        localStorage.setItem('darkmode', value);
-      }
-      </script>
-     
-</html>
+    <script src="{% static 'core/js/darkmode.js' %}"></script>
+    <script src="{% static 'core/js/convertidormoneda.js' %}"></script>
+  </body>
+  </html>
