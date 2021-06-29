@@ -35,25 +35,25 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>             
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Inicio</a>             
                     </li>
                     <img src="{% static 'core/assets/IconoBotas500x500.png' %}" alt="LOGO" width="50px" height="50px">
                     <li class="nav-item">
-                        <a class="nav-link" href="producto.html">Productos</a>
+                        <a class="nav-link" href="{% url 'producto' %}">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="acerca_de.html">Quienes somos</a>
+                        <a class="nav-link" href="{% url 'acerca_de' %}">Quienes somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="usermi.html">Empleados</a>
+                        <a class="nav-link" href="{% url 'usermi' %}">Empleados</a>
                     </li>
                 </ul>
                 <div class="my-2 my-lg-0">
-                    <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
-                    <a class="nav-link" href="registro.html">Crea una Cuenta</a>
+                    <a class="nav-link" href="{% url 'inicio_sesion' %}">Iniciar Sesión</a>
+                    <a class="nav-link" href="{% url 'registro' %}">Crea una Cuenta</a>
                 </div>
                 <div class="toggle-btns">
                     <div class="toggle-btn">
@@ -73,17 +73,17 @@
                 <div class="col-sm-12 col-md-3 mt-4">
                     <h6 class="display-6 header-del-footer">Navegación</h6>                    
                     <nav class="nav flex-column bg-rojo-oscuro">
-                        <a class="nav-link active" href="index.html">Inicio</a>
-                        <a class="nav-link" href="producto.html">Nuestros Productos</a>
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                        <a class="nav-link" href="acerca_de.html">Quiénes Somos?</a>
+                        <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+                        <a class="nav-link" href="{% url 'producto' %}">Nuestros Productos</a>
+                        <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+                        <a class="nav-link" href="{% url 'acerca_de' %}">Quiénes Somos?</a>
                     </nav>
                 </div>
                 <div class="col-sm-12 col-md-3 mt-4 bg-rojo-oscuro">
                     <h6 class="display-6 header-del-footer">Manejo de <br> Cuenta</h6>                    
                     <nav class="nav flex-column">                        
-                        <a class="nav-link active" href="registro.html">Crea una Cuenta!</a>
-                        <a class="nav-link" href="inicio_sesion.html">Inicia tu sesión</a>
+                        <a class="nav-link active" href="{% url 'registro' %}">Crea una Cuenta!</a>
+                        <a class="nav-link" href="{% url 'inicio_sesion' %}">Inicia tu sesión</a>
                         </nav>
                 </div>
                 <div class="col-sm-12 col-md-3 mt-4 bg-rojo-oscuro">
@@ -111,5 +111,6 @@
     <script src="{% static 'core/js/reloj.js' %}"></script>
     <script src="{% static 'core/js/darkmode.js' %}"></script>
     <script src="{% static 'core/js/convertidormoneda.js' %}"></script>
-  </body>
-  </html>
+    <script src="{% static 'core/js/usermiapi.js' %}"></script>
+</body>
+</html>
