@@ -1,0 +1,72 @@
+/* Archivos de estilos personalizados */
+
+
+.btn{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.card-img-overlay{
+    color: #fefae0;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*
+A pesar de que dice café, es de color rojo.
+Esta clase se usa en el navbar
+*/
+.bg-navbar {
+    background-color: #bc3322 !important;
+    color: #bc3322;
+}
+
+.bg-rojoananjado{
+    background-color:#bc3322;
+    color:#bc3322 ;
+}
+
+/*
+Le da una imagen al fondo de las páginas.
+Posible futuro problema: si la página es muy larga, 
+se va a repetir la imagen y se verá feo
+*/
+body.darkmode{
+    background-color: rgb(32, 32, 44);
+    color: white;
+}
+
+/*clase para el color del footer*/
+.bg-rojo-oscuro{
+    background-color: rgb(107, 9, 9);
+}
+
+/*clase para los títulos de las tarjetas en el footer*/
+.header-del-footer{
+    color:white;
+}
+
+/*El ícono bootstrap no funcionaba así que 
+descargué un ícono para el toggle del navbar*/
+.navbar-toggler-icon {
+    background-image: url(../assets/iconos/navbar_toggle_icon.png);
+}
+
+/*clase para los retratos en acerca_de*/
+.retrato{
+    border-radius: 95%;
+}
+
+.form-group small {
+    visibility: hidden;
+}
+
+.error small{
+    color: red;
+    visibility: visible;
+}
+
+/*usado para cambiar el tag small para que muestre que está correcto en registro.html*/
+.correcto small {
+    color: green;
+    visibility: visible;
+}
