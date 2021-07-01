@@ -7,7 +7,7 @@ class tipoUsuario(models.Model):
     tipoUsuario = models.CharField(max_length=50,verbose_name='Tipo Usuario')
 
     class Meta:
-        verbose_name = 'tipo de suario'
+        verbose_name = 'tipo de usuario'
         verbose_name_plural ='tipos de usuarios'
         ordering = ["idTipoUsuario"]
 
