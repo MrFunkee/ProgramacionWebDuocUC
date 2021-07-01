@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <!--el style lo podemos poner después en el style.css con alguna clase nueva-->
         <div class="jumbotron text-center"
-                    style="background-image: url(assets/ImagenTrekking_3456x2160.jpg); 
+                    style="background-image: url({% static 'core/assets/ImagenTrekking_3456x2160.jpg' %}); 
                             background-size: 100%; 
                             background-position-y: -200px;">
             <div class="row">
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="assets/retratos/mati.jpg" alt="hola" class="card-img-top retrato">
+                    <img src="{% static 'core/assets/retratos/mati.jpg' %}" alt="hola" class="card-img-top retrato">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">Matías Cruz</h5>
                         <p>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="assets/retratos/seba 1-1.jpg" alt="hola" class="card-img-top retrato">
+                    <img src="{% static 'core/assets/retratos/seba 1-1.jpg' %}" alt="hola" class="card-img-top retrato">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">Sebastián Lopez</h5>
                         <p>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="assets/retratos/Danko2.jpg" alt="hola" class="card-img-top retrato">
+                    <img src="{% static 'core/assets/retratos/Danko2.jpg' %}" alt="hola" class="card-img-top retrato">
                     <div class="card-body">
                         <h5 class="card-title font-weight-bold">Danko Osorio</h5>
                         <p>
