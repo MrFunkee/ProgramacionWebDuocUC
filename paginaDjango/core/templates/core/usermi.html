@@ -1,0 +1,48 @@
+{% extends 'core/plantilla.html' %}
+
+{% load static %}
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+      <!--Inicio de sesion-->
+      <br><br><br><br><br>
+      <div class="container mb-4 mt-4">
+        <h2>Lista de nuestros empleados y sus contactos</h2>
+        <div class="card-group">
+            <div class="card ">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto"></p>
+                        <p class="card-parrafo text-center" id="informacion"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre2"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto2"></p>
+                        <p class="card-parrafo text-center" id="informacion2"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title text-center"id="nombre3"></h3>
+                    <div class="card-body">
+                        <p class="card-parrafo text-center" id="contacto3"></p>
+                        <p class="card-parrafo text-center" id="informacion3"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+      </div>
+     
+        
+    </div> 
+    <br><br><br><br><br>
+      <!--Fin Inicio sesion-->           
+{% endblock %}
+    

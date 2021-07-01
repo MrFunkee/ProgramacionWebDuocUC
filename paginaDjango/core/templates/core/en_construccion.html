@@ -1,60 +1,10 @@
-<!DOCTYPE html>
-<html lang="es-cl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
-    <!--icono tab-->
-    <link rel="icon" href="assets/IconoBotas500x500.png">
-        <!--precargar bootstrap local-->
-    <!--Usar el css bootstrap.css, el min es más liviano pero es lo mismo-->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+{% extends 'core/plantilla.html' %}
 
-    <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="use.fontawesome.com/releases/v5.8.2/css/all.css">
+{% load static %}
+{% block title %}En Construcción!{% endblock %}
 
-    <!--STYLE PERSONAL-->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <!--al precargar js, se sugiere hacerlo al final del BODY-->
-        <!--orden de carga es JS, Popper, Bostrap.js-->
-</head>
-<body class="darkmode">
-    <!--cambiar colores, nombres botones, etc-->
-    <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
-        <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="assets/Logo.png" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
-            A la punta del cerro</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>             
-                    </li>
-                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="50px" height="50px">
-                    <li class="nav-item">
-                        <a class="nav-link" href="producto.html">Productos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="acerca_de.html">Quienes somos</a>
-                    </li>
-                </ul>
-                <div class="my-2 my-lg-0">
-                    <a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a>
-                    <a class="nav-link" href="registro.html">Crea una Cuenta</a>
-                </div>
-            </div>
-            <button id="bdark">Modo oscuro</button>
-            </div>
-            </div>
-        </div>
-    </nav>
+{% block content %}
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 text-center">
@@ -67,72 +17,4 @@
         </div>
     </div>
 
-
-       <!--Footer Section -->
-       <footer class="footer bg-rojo-oscuro mt-4 py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-3 mt-4">
-                    <h6 class="display-6 header-del-footer">Navegación</h6>                    
-                    <nav class="nav flex-column bg-rojo-oscuro">
-                        <a class="nav-link active" href="index.html">Inicio</a>
-                        <a class="nav-link" href="producto.html">Nuestros Productos</a>
-                        <a class="nav-link" href="contacto.html">Contacto</a>
-                        <a class="nav-link" href="acerca_de.html">Quiénes Somos?</a>
-                    </nav>
-                </div>
-                <div class="col-sm-12 col-md-3 mt-4 bg-rojo-oscuro">
-                    <h6 class="display-6 header-del-footer">Manejo de <br> Cuenta</h6>                    
-                    <nav class="nav flex-column">                        
-                        <a class="nav-link active" href="registro.html">Crea una Cuenta!</a>
-                        <a class="nav-link" href="inicio_sesion.html">Inicia tu sesión</a>
-                        </nav>
-                </div>
-                <div class="col-sm-12 col-md-3 mt-4 bg-rojo-oscuro">
-                    <h6 class="display-6 header-del-footer">Páginas <br>Recomendadas</h6>                    
-                    <nav class="nav flex-column">                        
-                        <a class="nav-link active" href="https://es.wikipedia.org/wiki/Senderismo">¿Qué es Trekking?</a>
-                        <a class="nav-link" href="https://www.lonelyplanet.es/blog/los-trekkings-mas-bellos-del-mundo">Mejores senderos <br> de Trekking</a>
-                        <a class="nav-link" href="https://www.travelsauro.com/es/consejos-trekking-principiantes/">Consejos para Trekking</a>
-                    </nav>
-                </div>
-                <div class="col-sm-12 col-md-3 text-center mt-4">
-                    <img src="assets/IconoBotas500x500.png" alt="LOGO" width="150px" height="150px">
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    
-        <!-- Preacargar JS Boostrap al final del documento -->
-    <!-- El orden de carga es jQuery, Popper.js, Boostrap.js -->
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script> 
-        const bdark = document.querySelector('#bdark');
-        const body = document.querySelector('body');
-    
-        load();
-        
-        bdark.addEventListener('click', e =>{body.classList.toggle('darkmode');
-        store(body.classList.constains('darkmode'));});
-    
-        function load(){
-          const darkmode = localStorage.getItem('darkmode');
-    
-          if(!darkmode){
-            store('false');
-          }else if(darkmode== 'true'){
-            body.classList.add('darkmode');
-          }
-        }
-        function store(value){
-          localStorage.setItem('darkmode', value);
-        }
-      
-        
-        </script>
-</body>
-     
-</html>
+{% endblock %}
