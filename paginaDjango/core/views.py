@@ -21,3 +21,8 @@ def inicio_sesion(request):
 
 def registro(request):
     return render(request, "core/registro.html")
+
+def en_construccion(request):
+    return render(request, "core/en_construccion.html")
+
+en_construccion
