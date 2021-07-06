@@ -26,7 +26,7 @@
     <!-- NAVEGADOR-->
     <nav class="navbar navbar-expand-lg bg-navbar justify-content-end">
         <div class="container">
-            <a href="index.html" class="navbar-brand"><img src="{% static 'core/assets/Logo.png' %}" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
+            <a href="{% url 'index' %}" class="navbar-brand"><img src="{% static 'core/assets/Logo.png' %}" alt="LOGO" width="100px" style="margin-right: 10px; margin-left: 0px; position: relative; border-radius: 90%;">
                 A la punta del cerro
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
