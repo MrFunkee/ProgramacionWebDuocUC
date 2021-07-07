@@ -1,0 +1,111 @@
+{% extends 'core/plantilla.html' %}
+
+{% load static %}
+{% block title %}Producto{% endblock %}
+
+{% block content %}
+        <!--Sección JUMBOTRON-->
+        <div class="container mt-4">
+            <div class="jumbotron text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Lleva el espíritu de viaje donde vayas!</h2>
+                        <h6><i>Comprando nuestros productos de aventura</i></h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--SECCION CONVERTIDOR DE MONEDAS-->
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                </div>
+                <div class="col-5">
+                    <div class="card ">
+                        <div class="card-header ">
+                            <div class="card text-dark text-center">
+                                <h3>Consulta Valores del Peso Chileno!</h3>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <input type="tel" class="form-control" id="pesosConvertir" name="pesos" placeholder="Ingresa la cantidad de pesos chilenos $0000" style="text-align: center;">
+                            <div class="card mt-2 mb-2">    
+                                <button class="btn btn-warning btn-lg active" onclick="cambioDolar()" type="button" aria-pressed="true">DOLAR<span></span></button> 
+                            </div>
+                            <div class="card">
+                                <button class="btn btn-success btn-lg active" onclick="cambioEuro()" type="button" aria-pressed="true">EURO</button>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-body">
+                                <h4 class="card-text text-center" id="resultado1">
+                                </h4>
+                                <h4 class="card-text text-center" id="resultado2">
+                                </h4>
+                                <small class="card-text text-center" id="resultado3">
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FIN  CONVERTIDOR MONEDAS-->
+
+        <!-- LISTADO PRODUCTOS -->
+        <div class="container justify-content-center">
+            <div class="row bg-dark text-white rounded p-5 mt-4 mb-4">
+                <h1>Listado Productos</h1>
+            </div>
+            <div class="row">
+                {% if 'ok' in request.GET %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Oh yeah!!! </strong>Producto actualizado satisfactoriamente
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+                {% if 'fail' in request.GET %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Ups!!! </strong>En estos momentos no podemos atender a tu solicitud... inténtalo más tarde
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endif %}
+    
+                <div class="table-responsive">
+                    <table id="tabla_productos" class="table table-dark " >
+                        <thead >
+                            <tr class="table-info text-dark">
+                                <th>ID</th>
+                                <th>Descripción</th>
+                                <th>Valor Unitario $</th>
+                                <th>Stock</th>
+                                <th>Imagen</th>
+                                
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for producto in productos %}
+                                <tr class="text-center" >
+                                    <td>{{producto.idProducto}}</td>
+                                    <td>{{producto.descripcion}}</td>
+                                    <td>{{producto.precio}}</td>
+                                    <td>{{producto.cantidad}}</td>
+                                    {% if producto.imagen %}
+                                        <td><img class="img-producto" src="{{producto.imagen.url}}" alt="" width="100" height="100"></td>
+                                    {% else %}
+                                        <td><img class="img-producto" src="{% static 'core/img/image_not_found.jpg' %}" alt="" width="100px" height="100px"></td>
+                                    {% endif %}                                
+                                    
+                                        
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- FIN LISTADO PRODUCTOS-->
+
+{% endblock %}
+    

@@ -1,6 +1,15 @@
 from django.shortcuts import render
-
+from .models import Producto, Post
 # Create your views here.
+
+def product_list(request):
+    productos = Producto.objects.all()
+    return render(request,"core/productos2.html",{'productos':productos})
+
+def blog(request):
+    posts = Post.objects.all()
+    return render(request,"core/index.html", {'posts':posts})
+
 def acerca_de(request):
     return render(request, "core/acerca_de.html")
 
@@ -25,4 +34,6 @@ def registro(request):
 def en_construccion(request):
     return render(request, "core/en_construccion.html")
 
-en_construccion
+
+
+

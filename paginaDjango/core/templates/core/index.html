@@ -60,58 +60,44 @@
       
   <!-- CARD INFORMACION ejemplo como pueden ir los articulos  -->
   <!-- ARTICULO 1-->
-  <div class="container mt-1 mb-1 bg-danger">
-    <div class="row">
-      <div class="col-8  mt-4 mb-4">
-          <div class="card">
-            <img class= "card-img-top" src="{% static 'core/assets/imagen ropaa.jpg' %}" height="500" width="400" alt="imagen">
-            <div class="card-img-overlay h-100 d-flex flex-column justify-content-end ">
-              <h3>Ve lo nuevo de nuestros productos</h3>
-              <p>Poleras, mochilas, y muchas cosas mas</p>
-            </div>
-          </div>
-      </div>
-      <div class="col xl-6 mt-5 mb-4 " >
-        <div class="card bg-danger text-light">
-          <h3>REVISA NUESTRO PRODUCTOS</h3>
-          <P>Ropa de invierno y souvenirs han llegado a nuestros productos</P>
-          <a href="{% url 'producto' %}"><button type="button"  class="btn btn-outline-warning">Ver mas aqui</button></a>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-    <!-- FIN ARTICULO 1 -->
-    <!-- SEPARADOR-->
-    <div class="container">
-      <div class="row  mt-1 ">
-        <p></p>
-      </div>
-    </div>
-    <!--FIN  SEPARADOR-->
-    <!-- ARTICULO 2-->
-    <div class="container mt-1 mb-1 bg-danger">
-      <div class="row">
-        <div class="col-8 bg-cafe mt-4 mb-4">
-            <div class="card">
-              <img class= "card-img-top" src="{% static 'core/assets/imagen cerro.jpg' %}" width="1200" height="400" alt="imagen">
-              <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
-                <h3>Resvisa este nuevo articulo 1 ejemplo</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
-              </div>
-            </div>
-        </div>
-        <div class="col xl-6 mt-5 mb-4 " >
-          <div class="card bg-danger text-light">
-            <h3>REVISA ESTE NUEVO ARTICULO ACA</h3>
-            <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus beatae eius ad aliquam dicta iure!</P>
-            <a href="{% url 'en_construccion' %}"><button type="button" class="btn btn-outline-warning">Ver mas aqui</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- FIN ARTICULO 2-->
 
+  {% for post in posts %}
+        <section class="page-section cta">
+            <div class="container mt-5 mb-5">
+                <div class="row">
+                  <div class="col">
+                    <div class="card">
+                      <div class="card-img-top bg-danger">
+                        {% if post.image %}
+                        <p class="mb-0">
+                            <img class="img-post mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{post.image.url}}" alt="" >
+                        </p>
+                        {% endif %}
+                      </div>
+                      <div class="card-body bg-danger ">
+                        <div class="titulo text-center bg-secondary">
+                          <h1 class="section-heading mb-5 ">
+                            <span class="section-heading-lower">{{post.title}}</span>
+                          </h1>
+                        </div>
+                        <div class="bodynoticia ">
+                          <h3 class="mb-0 mbt">
+                            {{post.content|linebreaks}}
+                          </h3>
+                          <div class="revisaMas  text-center">
+                            <a href="#" class="btn btn-warning">REVISA MAS AQUI</a>                            
+                          </div>
+                          
+                        </div>   
+                      </div>
+                      <div class="card-footer bg-danger">       
+                        Publiclado el : <span class="section-heading-upper">{{post.published|date:"SHORT_DATE_FORMAT"}}</span>
+                      </div>
+                    </div>
+                  </div>        
+            </div>
+        </section>
+    {% endfor %}    
+
+   
 {% endblock %}

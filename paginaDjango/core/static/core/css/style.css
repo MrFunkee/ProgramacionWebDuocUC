@@ -133,3 +133,19 @@ descargué un ícono para el toggle del navbar*/
 .minima-altura-tarjeta-body {
     min-height: 180px;
 }
+
+.img-producto {
+    width: 50px;
+    height: 50px;
+}
+
+.img-post {
+    width: 50px;
+    height: 500px;
+    
+}
+
+.titulo {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
