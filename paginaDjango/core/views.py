@@ -48,7 +48,7 @@ def modificarProducto(request,idProducto):
         form = productoForm(request.POST,request.FILES,instance=producto)
         if form.is_valid():
             form.save()                
-            return redirect(reverse('producto')+ "?ok")
+            return redirect(reverse('producto')+ "?upd")
         else:
             return redirect(reverse('modificarProducto')+ idProducto)
 

@@ -63,17 +63,29 @@
             
             <div class="row">
                 <div class="col">
-                        {% if 'ok' in request.GET %}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>Oh yeah!!! </strong>Usuario Registrado Correctamente
-                            <button type="button" class="close" aria-label="Close"  aria-hidden="true">&times;</button>
-                        </div>
+                    {% if 'ok' in request.GET %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong></strong> Producto Agregado Correctamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    {% if 'upd' in request.GET %}
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <strong></strong> Producto Registrado Correctamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     {% endif %}
                     {% if 'fail' in request.GET %}
                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Ups!!! </strong>En estos momentos no podemos atender a tu solicitud... inténtalo más tarde
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
+                        <strong></strong> Ha ocurrido un error, intente nuevamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>  
                     {% endif %}
         
                     <div class="table-responsive">
@@ -102,7 +114,7 @@
                                             <td><img class="img-producto" src="{% static 'core/img/image_not_found.jpg' %}" alt="" width="100px" height="100px"></td>
                                         {% endif %}                                
                                         <td>
-                                            <a class="btn btn-success" href="{% url 'modificar' producto.idProducto %}">Modificar</a>
+                                            <a class="btn btn-info" href="{% url 'modificar' producto.idProducto %}">Modificar</a>
                                         </td>
                                             
                                     </tr>
@@ -110,7 +122,13 @@
                             </tbody>
                         </table>
                     </div>
-                </div> 
+                </div>      
+            </div>
+            <div class="row">
+                <div class="col text-center justify-content-center mt-2 mb-2">
+                    <h2>Agregar Nuevo Producto </h2>
+                    <a class="btn btn-success" href="#">Agregar</a>
+                </div>
             </div>
         </div>
         
