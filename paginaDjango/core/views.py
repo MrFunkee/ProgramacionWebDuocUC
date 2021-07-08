@@ -88,12 +88,12 @@ def agregarPost(request):
             content = form.cleaned_data.get("content")
             image = form.cleaned_data.get("image")
             obj = Post.objects.create(
-                tittle=title,
+                title=title,
                 content=content,
                 image=image
             )
             obj.save()            
-            return redirect(reverse('articulo')+ "?ok")
+            return redirect(reverse('articulos')+ "?ok")
         else:
             return redirect(reverse('agregarPost')+ "?fail")
     else:
@@ -105,8 +105,8 @@ def listaPost(request):
     productos = Post.objects.all()
     return render(request,"core/confiPost.html",{'post':productos})
 
-def eliminarPost(request,tittle):
-    productoEliminar = Post.objects.get(tittle = tittle)
+def eliminarPost(request,title):
+    productoEliminar = Post.objects.get(title = title)
     productoEliminar.delete()
     return redirect(to="articulos")
 

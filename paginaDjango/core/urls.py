@@ -16,6 +16,6 @@ urlpatterns = [
     path('confiPost/', listaPost , name='articulos'),
     path('agregarArticulo/', agregarPost , name='agregarPost'),
     path('modificarArticulo/<title>', modificarPost , name='modificarPost'),
-    path('eliminarProducto/<title>', eliminarPost , name='eliminarPost'),
+    path('eliminarPost/<title>', eliminarPost , name='eliminarPost'),
 ]
 
