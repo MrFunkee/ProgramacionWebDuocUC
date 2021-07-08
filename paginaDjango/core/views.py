@@ -1,10 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 from .models import Producto, Post
+from .forms import productoForm
 # Create your views here.
 
-def product_list(request):
+def listaProducto(request):
     productos = Producto.objects.all()
-    return render(request,"core/productos2.html",{'productos':productos})
+    return render(request,"core/producto.html",{'productos':productos})
+
+def eliminarProducto(request,idProducto):
+    productoEliminar = Producto.objects.get(idProducto = idProducto)
+    productoEliminar.delete()
+    return redirect(to="producto")
 
 def blog(request):
     posts = Post.objects.all()
@@ -19,8 +25,6 @@ def index(request):
 def usermi(request):
     return render(request, "core/usermi.html")
 
-def producto(request):
-    return render(request, "core/producto.html")
 
 def contacto(request):
     return render(request, "core/contacto.html")
@@ -33,6 +37,22 @@ def registro(request):
 
 def en_construccion(request):
     return render(request, "core/en_construccion.html")
+
+
+def modificarProducto(request,idProducto):
+
+    producto = Producto.objects.get(idProducto = idProducto)
+    form = productoForm(instance = producto)
+
+    if request.method == 'POST':
+        form = productoForm(request.POST,request.FILES,instance=producto)
+        if form.is_valid():
+            form.save()                
+            return redirect(reverse('producto')+ "?ok")
+        else:
+            return redirect(reverse('modificarProducto')+ idProducto)
+
+    return render(request,'core/modificarProducto.html',{'form':form})
 
 
 
