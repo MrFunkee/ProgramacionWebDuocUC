@@ -111,7 +111,7 @@
                                         {% if producto.imagen %}
                                             <td><img class="img-producto" src="{{producto.imagen.url}}" alt="" width="100" height="100"></td>
                                         {% else %}
-                                            <td><img class="img-producto" src="{% static 'core/img/image_not_found.jpg' %}" alt="" width="100px" height="100px"></td>
+                                            <td><img class="img-producto" src="{% static 'core/assets/image_not_found.jpg' %}" alt="" width="100px" height="100px"></td>
                                         {% endif %}                                
                                         <td>
                                             <a class="btn btn-info" href="{% url 'modificar' producto.idProducto %}">Modificar</a>
@@ -126,9 +126,12 @@
             </div>
             <div class="row">
                 <div class="col text-center justify-content-center mt-2 mb-2">
-                    <h2>Agregar Nuevo Producto </h2>
-                    <a class="btn btn-success" href="#">Agregar</a>
+                    <div class="card">
+                        <h2>Agregar Nuevo Producto </h2>
+                        <a class="btn btn-success" href="{% url 'agregar'  %}">Agregar</a>
+                     </div>
                 </div>
+                    
             </div>
         </div>
         

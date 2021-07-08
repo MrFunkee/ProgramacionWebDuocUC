@@ -1,0 +1,85 @@
+{% extends 'core/plantilla.html' %}
+
+{% load static %}
+{% block title %}Producto{% endblock %}
+
+{% block content %}
+
+            <!-- LISTADO PRODUCTOS -->
+            <div class="row">
+                <div class="col">
+                    <div class="row bg-dark text-white rounded p-5 mt-4 mb-4">
+                        <h1>Listado Articulos</h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    {% if 'ok' in request.GET %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong></strong> Articulo Agregado Correctamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    {% if 'upd' in request.GET %}
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <strong></strong> Articulo Registrado Correctamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endif %}
+                    {% if 'fail' in request.GET %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong></strong> Ha ocurrido un error, intente nuevamente
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>  
+                    {% endif %}
+        
+                    <div class="table-responsive">
+                        <table id="tabla_productos" class="table table-dark " >
+                            <thead >
+                                <tr class="table-info text-dark">
+                                    <th class="text-center"> </th>
+                                    <th class="text-center">Titulo</th> 
+                                    <th>Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in post %}
+                                    <tr >
+                                        <td class="text-center"> <a class="btn btn-danger" href="{% url 'eliminarPost' post.title %}">X</a> </td>
+                                        <td class="text-center">{{post.title}}</td>
+                                            
+                                        <td><a class="btn btn-info" href="{% url 'modificarPost' post.title %}">Modificar</a></td>
+                                            
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>      
+            </div>
+            <div class="row">
+                <div class="col text-center justify-content-center mt-2 mb-2">
+                    <div class="card">
+                        <h2>Agregar Nuevo Articulo </h2>
+                        <a class="btn btn-success" href="{% url 'agregarPost'  %}">Agregar</a>
+                     </div>
+                </div>
+                    
+            </div>
+        </div>
+        
+
+        
+        
+        <!-- FIN LISTADO PRODUCTOS-->
+
+{% endblock %}
+    

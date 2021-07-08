@@ -59,29 +59,33 @@
   </div>
       
   <!-- CARD INFORMACION ejemplo como pueden ir los articulos  -->
-  <!-- ARTICULO 1-->
+        <div class="card mt-3">
+          <a class="btn btn-success" href="{% url 'articulos' %}"> Opciones de los  Articulos</a>
+        </div>
+
+
 
   {% for post in posts %}
         <section class="page-section cta">
-            <div class="container mt-5 mb-5">
+            <div class="container mt-3 mb-5">
                 <div class="row">
                   <div class="col">
                     <div class="card">
                       <div class="card-img-top bg-danger">
                         {% if post.image %}
-                        <p class="mb-0">
+                        <p class="mt-2">
                             <img class="img-post mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{post.image.url}}" alt="" width="500px" height="250px">>
                         </p>
                         {% endif %}
                       </div>
                       <div class="card-body bg-danger ">
                         <div class="titulo text-center bg-secondary">
-                          <h1 class="section-heading mb-5 ">
+                          <h1 class="section-heading  text-center">
                             <span class="section-heading-lower">{{post.title}}</span>
                           </h1>
                         </div>
                         <div class="bodynoticia ">
-                          <h3 class="mb-0 mbt">
+                          <h3 class="mt-1">
                             {{post.content|linebreaks}}
                           </h3>
                           <div class="revisaMas  text-center">

@@ -1,0 +1,76 @@
+{% extends 'core/plantilla.html' %}
+
+{% load static %}
+{% block title %}Modificar Articulo{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row bg-dark text-white rounded p-5 mt-4 mb-4">
+        <h1>Modificar  articulo</h1>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if 'ok' in request.GET %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong></strong> Producto Agregado Correctamente
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+            {% if 'upd' in request.GET %}
+            <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                <strong></strong> Producto Registrado Correctamente
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            {% endif %}
+            {% if 'fail' in request.GET %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong></strong> Ha ocurrido un error, intente nuevamente
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>  
+            {% endif %}
+            <div class="card">
+                <a class="btn btn-success" href="{% url 'articulos'  %}"> <--VOLVER A ARTICULOS</a>
+            </div>
+                        <!-- Formulario de producto --> 
+                        <div class="formModificar  justify-content-center mb-5">
+                            <form action="" method="POST" id="formulario" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+                                    <label class="fw-bold">Titulo *</label>
+                                    <div class="input-group">
+                                        {{form.title}}
+                                    </div>                
+                                    {{form.title.errors}}
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label class="fw-bold">Contenido *</label>
+                                    <div class="input-group">
+                                        {{form.content}}
+                                    </div>                
+                                    {{form.content.errors}}
+                                </div>
+                                <div class="form-group mb-3 justify-content-center">
+                                    <label class="fw-bold">Imagen</label>
+                                    <div class="card-img text-center">
+                                        {{form.image}}
+                                        {% if form.instance.image %}
+                                            <img class="img-producto-update mt-1" src="{{form.instance.image.url}}" alt="" width="300" height="300">
+                                        {% endif %}
+                                    </div>  
+                                </div>
+                                <div class=" formModificar-footer text-center mt-2">
+                                    <input type="submit" class="btn btn-success btn-block py-2" id="enviar" value="Agregar">
+                                    <input type="reset" class="btn btn-danger btn-block py-2" id="limpiar" value="Limpiar">
+                                </div>
+                            </form>
+                        </div>    
+        </div>                          
+    </div>
+</div>
+{% endblock %}
