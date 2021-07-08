@@ -77,3 +77,17 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Empleado(models.Model):
+    idEmpleado = models.CharField(primary_key=True, max_length=10,verbose_name='Código')
+    nombreEmpleado = models.CharField(max_length=100,verbose_name='Nombre Empleado')
+    descripcion = models.TextField(verbose_name='Descripción')
+    imagen = models.ImageField(verbose_name='Imagen',upload_to='empleados',null=True,blank=True)
+
+    class Meta:
+        verbose_name = 'empleado'
+        verbose_name_plural = 'empleados'
+        ordering = ["idEmpleado"]
+
+    def __str__(self):
+            return self.nombreEmpleado

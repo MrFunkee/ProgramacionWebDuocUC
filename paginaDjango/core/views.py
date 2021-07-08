@@ -55,5 +55,7 @@ def modificarProducto(request,idProducto):
     return render(request,'core/modificarProducto.html',{'form':form})
 
 
+def acerca_de2(request):
+    return render(request, "core/acerca_de2.html")
 
 

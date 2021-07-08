@@ -2,3 +2,10 @@
 paginaDjango/core/migrations/__pycache__/
 paginaDjango/core/__pycache__/
 paginaDjango/paginaDjango/__pycache__/
+paginaDjango/core/__pycache__/admin.cpython-38.pyc
+paginaDjango/core/__pycache__/models.cpython-38.pyc
+paginaDjango/core/__pycache__/urls.cpython-38.pyc
+paginaDjango/core/__pycache__/views.cpython-38.pyc
+paginaDjango/rest_vehiculo/__pycache__/serializers.cpython-38.pyc
+paginaDjango/rest_vehiculo/__pycache__/urls.cpython-38.pyc
+paginaDjango/rest_vehiculo/__pycache__/views.cpython-38.pyc
