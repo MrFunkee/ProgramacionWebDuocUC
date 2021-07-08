@@ -26,37 +26,36 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="{% static 'core/assets/retratos/mati.jpg' %}" alt="hola" class="card-img-top retrato">
+                    <img src="" id='imagen0' alt="Mati" class="card-img-top retrato">
                     <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Matías Cruz</h5>
-                        <p>
-                            Estudiante Analista Programador Computacional en DUOC UC
-                        </p>
+                        <h5 class="card-title font-weight-bold" id='nombre0'></h5>
+                        <p id='descripcion0'></p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="{% static 'core/assets/retratos/seba 1-1.jpg' %}" alt="hola" class="card-img-top retrato">
+                    <img src="" id='imagen1' alt="Seba" class="card-img-top retrato">
                     <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Sebastián Lopez</h5>
-                        <p>
-                            Estudiante Analista Programador Computacional en DUOC UC
-                        </p>
+                        <h5 class="card-title font-weight-bold" id='nombre1'></h5>
+                        <p id='descripcion1'></p>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card border-dark text-center" style="width: 18rem;">
-                    <img src="{% static 'core/assets/retratos/Danko2.jpg' %}" alt="hola" class="card-img-top retrato">
+                    <img src="" id='imagen2' alt="Danko" class="card-img-top retrato">
                     <div class="card-body">
-                        <h5 class="card-title font-weight-bold">Danko Osorio</h5>
-                        <p>
-                            Estudiante Analista Programador Computacional en DUOC UC
-                        </p>
+                        <h5 class="card-title font-weight-bold" id='nombre2'></h5>
+                        <p id='descripcion2'></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {% block scripts %}
+        <script src="{% static 'core/js/acerca_deapi.js' %}"></script>
+    {% endblock %}
 {% endblock %}
